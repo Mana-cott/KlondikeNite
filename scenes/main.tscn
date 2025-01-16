@@ -4,11 +4,13 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Level" type="Node2D" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Player" parent="." instance=ExtResource("1_pyhbh")]
+[node name="Player" parent="GridContainer" instance=ExtResource("1_pyhbh")]
 position = Vector2(-421, 210)
 scale = Vector2(0.25, 0.25)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="GridContainer/Player"]
 zoom = Vector2(3, 3)

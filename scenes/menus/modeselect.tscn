@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpy7i4av7mpok"]
+
+[ext_resource type="Script" path="res://scripts/menu/modeselect.gd" id="1_05thv"]
+
+[node name="Modeselect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05thv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OnePlayer" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="TwoPlayer" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "2"
+
+[node name="ThreePlayer" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "3"
+
+[node name="FourPlayer" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "4"
+
+[node name="FivePlayer" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "5"
+
+[node name="SixPlayer" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/OnePlayer" to="." method="_on_one_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/TwoPlayer" to="." method="_on_two_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ThreePlayer" to="." method="_on_three_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/FourPlayer" to="." method="_on_four_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/FivePlayer" to="." method="_on_five_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SixPlayer" to="." method="_on_six_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
