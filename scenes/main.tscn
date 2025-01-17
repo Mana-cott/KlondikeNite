@@ -1,16 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://jay7687saq4u"]
+[gd_scene load_steps=5 format=3 uid="uid://jay7687saq4u"]
 
-[ext_resource type="PackedScene" uid="uid://drpm0erxoq4rs" path="res://scenes/player.tscn" id="1_pyhbh"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_cby4r"]
+[ext_resource type="Texture2D" uid="uid://dnn61rvixhtla" path="res://assets/BasicPlains-tileset-Ver.2_by_AxulArt.png" id="2_ni8ai"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpm2l"]
+texture = ExtResource("2_ni8ai")
+
+[sub_resource type="TileSet" id="TileSet_38f0w"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fpm2l")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_cby4r")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Level" type="Node2D" parent="."]
 
-[node name="Player" parent="GridContainer" instance=ExtResource("1_pyhbh")]
-position = Vector2(-421, 210)
-scale = Vector2(0.25, 0.25)
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = SubResource("TileSet_38f0w")
+format = 2
 
-[node name="Camera2D" type="Camera2D" parent="GridContainer/Player"]
-zoom = Vector2(3, 3)
+[node name="Root" type="Node" parent="."]
